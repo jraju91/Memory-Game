@@ -8,18 +8,52 @@ body {
     background-color: bisque;
 }
 
-.cards {
-    justify-content: center;
-    background-image: url("./download.jpeg");
-    display: grid;
-    flex-wrap: wrap-reverse;
-    height: 300px;
-    width: 13%;
-    border: solid;
-    border-radius: 15px;
-    border-color: black;
-    background-color: white;
-    object-fit: fill;
 
+.reset {
+    text-align: center;
+    padding-bottom: 15px;
 }
 
+
+ .container {
+     text-align: center;
+ }
+
+ .tiles {
+     display: inline-block;
+     width: 150px;
+     height: 150px;
+     /* background-color: black; */
+     cursor: pointer;
+     border: 1px solid black;
+ }
+
+ .card1 , .card11 {
+     background-image: url(images/blastoise.png);
+     background-size: 50%;
+ }
+
+ .card2, .card12 {
+     background-image: url(images/charizard.png);
+     background-size: 50%;
+ }
+
+ .card3, .card10 {
+     background-image: url(images/pikachu.png);
+     background-size: 50%;
+ }
+
+ .card4, .card9 {
+     background-image: url(images/pokeballs.png);
+     background-size: 50%;
+ }
+
+ .card5, .card7 {
+     background-image: url(images/squirtle.png);
+     background-size: 50%;
+ }
+
+ .card6, .card8 {
+     background-image: url(images/zapdos.png);
+     background-size: 50%;
+ }
