@@ -11,11 +11,10 @@ h1 {
     line-height: 0%;
 }
 
-.button {
+.reset {
     font-family: 'Dancing Script', cursive;
     font-weight: bold;
     text-align: left;
-
 }
 
 .edition {
@@ -38,15 +37,6 @@ h1 {
 body {
     background-color: bisque;
 }
-
-
-
-.reset {
-    /* text-align: center; */
-    padding-bottom: 15px;
-    padding-left: 15px;
-}
-
 
  .container {
      text-align: center;
@@ -111,3 +101,7 @@ body {
      background-repeat: no-repeat;
      background-position: center; 
     }
+
+.hidden {
+    display: none;
+}

@@ -38,23 +38,38 @@ function displayCards() {
     for (let i = 0; i < tiles.length; i++) {
         const element = tiles[i]
         const className = cardList[i].isFlipped ? cardList[i].name : 'pokeback'
+        console.log(className)
         element.classList.add(className)
     }
 
 }
 
+function flipCard(index) {
+    
+    console.log(index)
+    cardList[index].isFlipped = true;
+    displayCards()
+    console.log('in here')
+}
 
 console.log(cardList.length)
 console.log(tiles.length)
 
 
-// var item = items[Math.floor(Math.random()*items.length)];
+tiles.forEach((tile, index) => {
+    tile.addEventListener("click", () => flipCard(index))
+});
 
-// const 
 
-/* all pokebacks to start 
-    shuffled pokemon behind it
+
+
+/* 
     addEventListener to cards / to flip cards / if not match flip back
     alert GAME OVER
     keep track of wins
+    tiles.addEventListener('click', flipCard())
+    find which pokemon attached to click *hint same index in card list
+    assign is flipped = true
+    if cards do not match flip back over
+    if match green indicator
 */
