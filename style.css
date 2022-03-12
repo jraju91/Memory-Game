@@ -1,18 +1,38 @@
 body {
-    background-image: url(images/background.png);
+    background-image: url(images/wallpaper.jpeg);
     background-size: cover;
 }
 h1 {
     text-align: center;
     font-family: 'Dancing Script', cursive;
-    font-size: 50px;
+    font-size: 75px;
+    color: coral;
+    padding: 0px;
+    line-height: 0%;
 }
 
-h2 {
+.button {
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+    text-align: left;
+
+}
+
+.edition {
     text-align: center;
     font-family: 'Dancing Script', cursive;
-    font-size: 50px;
-    padding-top: 10px;
+    font-size: 25px;
+    padding: 0px;
+    color: coral;
+    line-height: 0%;
+    /* padding-bottom: 75px; */
+}
+
+.score {
+    text-align: right;
+    color: coral;
+    font-family: 'Dancing Script', cursive;
+    padding-right: 40px;
 }
 
 body {
@@ -20,9 +40,11 @@ body {
 }
 
 
+
 .reset {
-    text-align: center;
+    /* text-align: center; */
     padding-bottom: 15px;
+    padding-left: 15px;
 }
 
 
@@ -34,37 +56,58 @@ body {
      display: inline-block;
      width: 150px;
      height: 150px;
-     /* background-color: black; */
      cursor: pointer;
      border: 1px solid black;
+     background-color: beige;
+     margin: 5px;
  }
 
- .card1 , .card11 {
+ .pokeback {
+     background-image: url(images/pokeback.jpeg);
+     background-size: 100%;
+     background-repeat: no-repeat;
+     background-position: center;
+ }
+
+ .blastoise {
      background-image: url(images/blastoise.png);
-     background-size: 50%;
+     background-size: 90%;
+     background-repeat: no-repeat;
+     background-position: center;
+    
  }
 
- .card2, .card12 {
+ .charmander {
      background-image: url(images/charizard.png);
-     background-size: 50%;
+     background-size: 90%;
+     background-repeat: no-repeat;
+     background-position: center;
  }
 
- .card3, .card10 {
+ .pikachu {
      background-image: url(images/pikachu.png);
-     background-size: 50%;
+     background-size: 90%;
+     background-repeat: no-repeat;
+     background-position: center;
  }
 
- .card4, .card9 {
+ .pokeball {
      background-image: url(images/pokeballs.png);
-     background-size: 50%;
+     background-size: 90%;
+     background-repeat: no-repeat;
+     background-position: center;
  }
 
- .card5, .card7 {
+ .squirtle {
      background-image: url(images/squirtle.png);
-     background-size: 50%;
- }
+     background-size: 90%;
+     background-repeat: no-repeat;
+     background-position: center; 
+    }
 
- .card6, .card8 {
+ .zapdos {
      background-image: url(images/zapdos.png);
-     background-size: 50%;
- }
+     background-size: 90%;
+     background-repeat: no-repeat;
+     background-position: center; 
+    }
