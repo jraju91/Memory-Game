@@ -38,22 +38,50 @@ function displayCards() {
     for (let i = 0; i < tiles.length; i++) {
         const element = tiles[i]
         const className = cardList[i].isFlipped ? cardList[i].name : 'pokeback'
-        console.log(className)
+        // console.log(className)
         element.classList.add(className)
+        const classNameToRemove = className == 'pokeback' ? cardList[i].name : 'pokeback'
+        element.classList.remove(classNameToRemove)
     }
 
 }
 
+const currentCardsFlipped = []
+
+
+function cardsMatched () {
+    if (currentCardsFlipped.length === 2) {
+         if( currentCardsFlipped[0].name !== currentCardsFlipped[1].name) {
+             currentCardsFlipped[0].isFlipped = false
+             currentCardsFlipped[1].isFlipped = false
+             console.log(currentCardsFlipped)
+             setTimeout(displayCards, 500)
+             //  displayCards()
+             currentCardsFlipped.pop()
+             currentCardsFlipped.pop()
+             
+             } else {
+                    currentCardsFlipped.pop()
+                    currentCardsFlipped.pop()
+                }
+             
+        }
+    }
+
+
 function flipCard(index) {
     
-    console.log(index)
+    // console.log(index)
     cardList[index].isFlipped = true;
     displayCards()
-    console.log('in here')
+    currentCardsFlipped.push(cardList[index])
+    cardsMatched()
+    // console.log(currentCardsFlipped)
 }
 
-console.log(cardList.length)
-console.log(tiles.length)
+
+// console.log(cardList.length)
+// console.log(tiles.length)
 
 
 tiles.forEach((tile, index) => {
