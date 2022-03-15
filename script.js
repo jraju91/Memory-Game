@@ -64,7 +64,6 @@ function cardsMatched () {
                     currentCardsFlipped.pop()
                     currentCardsFlipped.pop()
                 }
-             
         }
     }
 
@@ -76,6 +75,17 @@ function flipCard(index) {
     displayCards()
     currentCardsFlipped.push(cardList[index])
     cardsMatched()
+    if (cardList.every((card) => {
+        return card.isFlipped == true
+    }) 
+    
+    ) {
+        setTimeout(() => {
+            alert('YOU WIN!')
+            
+        }, 200)
+    }
+    // when all cards are matched alert you win!
     // console.log(currentCardsFlipped)
 }
 
