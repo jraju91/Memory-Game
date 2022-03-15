@@ -9,9 +9,9 @@ const blastoise = "blastoise"
 const squirtle = "squirtle"
 const pokeball = "pokeball"
 
-const pokeList = [zapdos, zapdos, pikachu, pikachu, charmander, charmander, blastoise, blastoise, squirtle, squirtle, pokeball, pokeball ]
+let pokeList = [zapdos, zapdos, pikachu, pikachu, charmander, charmander, blastoise, blastoise, squirtle, squirtle, pokeball, pokeball ]
 
-const cardList = []
+let cardList = []
 
 buildCardList()
 displayCards()
@@ -29,7 +29,7 @@ function buildCardList() {
         cardList.push({
             name: getRandomPokemon(),
             isFlipped: false,
-        })
+        }) 
     
     }
 }
@@ -37,16 +37,19 @@ function buildCardList() {
 function displayCards() {
     for (let i = 0; i < tiles.length; i++) {
         const element = tiles[i]
+        console.log(cardList)
         const className = cardList[i].isFlipped ? cardList[i].name : 'pokeback'
         // console.log(className)
         element.classList.add(className)
         const classNameToRemove = className == 'pokeback' ? cardList[i].name : 'pokeback'
         element.classList.remove(classNameToRemove)
+        console.log(className, classNameToRemove)
+        
     }
 
 }
 
-const currentCardsFlipped = []
+let currentCardsFlipped = []
 
 
 function cardsMatched () {
@@ -88,15 +91,53 @@ function flipCard(index) {
     // when all cards are matched alert you win!
     // console.log(currentCardsFlipped)
 }
+// https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+function shuffle(array) {
+    let currentIndex = array.length,  randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (currentIndex != 0) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+  
+    return array;
+  }
 
+
+function newGame() {
+    // pokeList = [zapdos, zapdos, pikachu, pikachu, charmander, charmander, blastoise, blastoise, squirtle, squirtle, pokeball, pokeball ]
+    currentCardsFlipped = []
+    cardList.forEach((card) => {
+        card.isFlipped = false;
+    });
+    cardList = shuffle(cardList)
+    tiles.forEach((tile) => {
+        tile.className = "tiles";
+    });
+    // buildCardList()
+    displayCards()
+
+}
+
+// set eventlistener on new game button
+// set everything to default for new game
 
 // console.log(cardList.length)
 // console.log(tiles.length)
 
 
 tiles.forEach((tile, index) => {
-    tile.addEventListener("click", () => flipCard(index))
+    tile.addEventListener('click', () => flipCard(index))
 });
+
+reset.addEventListener('click', newGame)
 
 
 
