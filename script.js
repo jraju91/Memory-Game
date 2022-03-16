@@ -1,7 +1,10 @@
+// set query selectors for what I'll be using for the js portion
+
 const reset = document.querySelector('.reset')
 const tiles = document.querySelectorAll('.tiles')
 
 
+// 
 const zapdos = "zapdos"
 const pikachu = "pikachu"
 const charmander = "charmander"
@@ -82,7 +85,8 @@ function flipCard(index) {
         return card.isFlipped == true
     }) 
     
-    ) {
+    ) 
+    {
         setTimeout(() => {
             alert('YOU WIN!')
             
@@ -92,6 +96,7 @@ function flipCard(index) {
     // console.log(currentCardsFlipped)
 }
 // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+
 function shuffle(array) {
     let currentIndex = array.length,  randomIndex;
   
