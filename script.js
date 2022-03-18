@@ -4,7 +4,7 @@ const reset = document.querySelector('.reset')
 const tiles = document.querySelectorAll('.tiles')
 
 
-// 
+// creating variables to link to my css
 const zapdos = "zapdos"
 const pikachu = "pikachu"
 const charmander = "charmander"
@@ -12,13 +12,17 @@ const blastoise = "blastoise"
 const squirtle = "squirtle"
 const pokeball = "pokeball"
 
+// creating array of all my variables
 let pokeList = [zapdos, zapdos, pikachu, pikachu, charmander, charmander, blastoise, blastoise, squirtle, squirtle, pokeball, pokeball ]
 
+// empty array to push my pokeList into using the buildCardlist function
 let cardList = []
 
+// calling functions
 buildCardList()
 displayCards()
 
+// function to randomize pokemon on game board so if page is refreshed, cards will not be in same place
 function getRandomPokemon() {
     
     const index = Math.floor(Math.random()*pokeList.length)
@@ -27,6 +31,7 @@ function getRandomPokemon() {
     return pokemon
 }
 
+// initialize list of cards in random order
 function buildCardList() {
     while (pokeList.length) {
         cardList.push({
@@ -36,7 +41,8 @@ function buildCardList() {
     
     }
 }
-
+// function containing for loop to iterate through my cards to add class name which will allow cards to be matched,
+//  and also to remove class name if they are not matched. also used ternary operator instead of traditional if statement
 function displayCards() {
     for (let i = 0; i < tiles.length; i++) {
         const element = tiles[i]
@@ -46,21 +52,22 @@ function displayCards() {
         element.classList.add(className)
         const classNameToRemove = className == 'pokeback' ? cardList[i].name : 'pokeback'
         element.classList.remove(classNameToRemove)
-        console.log(className, classNameToRemove)
+        // console.log(className, classNameToRemove)
         
     }
 
 }
 
+// empty array created to push class names with cardsMatched function
 let currentCardsFlipped = []
 
-
+// function created to see if cards matched pushing to empty array listed above, and to remove them as well since the parameter of length === 2
 function cardsMatched () {
     if (currentCardsFlipped.length === 2) {
          if( currentCardsFlipped[0].name !== currentCardsFlipped[1].name) {
              currentCardsFlipped[0].isFlipped = false
              currentCardsFlipped[1].isFlipped = false
-             console.log(currentCardsFlipped)
+            //  console.log(currentCardsFlipped)
              setTimeout(displayCards, 500)
              //  displayCards()
              currentCardsFlipped.pop()
@@ -73,7 +80,14 @@ function cardsMatched () {
         }
     }
 
+// 
+function isGameOver() {
+        return cardList.every((card) => {
+            return card.isFlipped == true;
+        })
+    }
 
+// main function to run game
 function flipCard(index) {
     
     // console.log(index)
@@ -81,22 +95,20 @@ function flipCard(index) {
     displayCards()
     currentCardsFlipped.push(cardList[index])
     cardsMatched()
-    if (cardList.every((card) => {
-        return card.isFlipped == true
-    }) 
-    
-    ) 
+    if (isGameOver())
     {
         setTimeout(() => {
             alert('YOU WIN!')
             
         }, 200)
     }
-    // when all cards are matched alert you win!
-    // console.log(currentCardsFlipped)
 }
+
+
+
 // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 
+// function created to shuffle cards when new game button is clicked
 function shuffle(array) {
     let currentIndex = array.length,  randomIndex;
   
@@ -115,9 +127,8 @@ function shuffle(array) {
     return array;
   }
 
-
+// function created to restart game, setting everything back to default
 function newGame() {
-    // pokeList = [zapdos, zapdos, pikachu, pikachu, charmander, charmander, blastoise, blastoise, squirtle, squirtle, pokeball, pokeball ]
     currentCardsFlipped = []
     cardList.forEach((card) => {
         card.isFlipped = false;
@@ -131,17 +142,13 @@ function newGame() {
 
 }
 
-// set eventlistener on new game button
-// set everything to default for new game
 
-// console.log(cardList.length)
-// console.log(tiles.length)
-
-
+// calling function by using addEventListener and calling flipCard function
 tiles.forEach((tile, index) => {
     tile.addEventListener('click', () => flipCard(index))
 });
 
+// new game button and also calling newGame function to reset game without having to refresh page
 reset.addEventListener('click', newGame)
 
 
