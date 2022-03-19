@@ -6,6 +6,9 @@ This is a simple game that will test memory for the user. There are cards face d
 #### Link to game: 
 https://jraju91.github.io/Memory-Game/
 
+![image](https://user-images.githubusercontent.com/98073324/159108119-482242f7-c0d7-429e-b98d-7ac4861404c5.png)
+
+
 
 ##### Languages used:
 - CSS
