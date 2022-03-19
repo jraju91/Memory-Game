@@ -3,13 +3,8 @@
 ###### Description:
 This is a simple game that will test memory for the user. There are cards face down that will reveal images once clicked.
 
-##### Screenshot goes here
-
-
-
-#### Link to game:
-
-
+#### Link to game: 
+https://jraju91.github.io/Memory-Game/
 
 
 ##### Languages used:
@@ -24,3 +19,6 @@ This is a simple game that will test memory for the user. There are cards face d
 - Game is won once all cards have been matched
 
 ##### Long-Term Goals:
+- add flip animation
+- have starting screen
+- add levels with more cards
