@@ -3,10 +3,12 @@
 ###### Description:
 This is a simple game that will test memory for the user. There are cards face down that will reveal images once clicked.
 
+
+![image](https://user-images.githubusercontent.com/98073324/159108138-0e03e59f-2e5b-48b9-a005-9d505c12f624.png)
+
+
 #### Link to game: 
 https://jraju91.github.io/Memory-Game/
-
-![image](https://user-images.githubusercontent.com/98073324/159108119-482242f7-c0d7-429e-b98d-7ac4861404c5.png)
 
 
 
